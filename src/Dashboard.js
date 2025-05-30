@@ -7,7 +7,7 @@ export default function Dashboard() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSs1te3K2GDZFmvXnV2dj_uLzlZpLQsLehdsGgDIVT2jYBQaebYQ-xxTL_cT3sot9TrU31cHWM8Xhz1/pub?output=csv&gid=0");
+      const response = await fetch("https://docs.google.com/spreadsheets/d/e/2PACX-1vSs1te3K2GDZFmvXnV2dj_uLzlZpLQsLehdsGgDIVT2jYBQaebYQ-xxTL_cT3sot9TrU31cHWM8Xhz1/pub?gid=0&single=true&output=csv");
       const csvText = await response.text();
       const rows = csvText.trim().split("\n").map(row => row.split(","));
 
